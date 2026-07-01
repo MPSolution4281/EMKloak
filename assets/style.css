@@ -882,6 +882,14 @@ button { border: none; background: none; cursor: pointer; font: inherit; color: 
   color: var(--text-2);
 }
 .footer-sep { color: var(--border-hi); }
+.footer-cvr {
+  display: inline-block;
+  margin-top: .75rem;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--text-1);
+  letter-spacing: .03em;
+}
 
 /* ── PAGE HERO (inner pages) ──────────────────────────────────────────── */
 .page-hero {
