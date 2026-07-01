@@ -1084,6 +1084,21 @@ button { border: none; background: none; cursor: pointer; font: inherit; color: 
   color: var(--text-2);
 }
 .footer-sep { color: var(--border-hi); }
+.footer-made-by {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .01em;
+  transition: color .2s;
+}
+.footer-made-by:hover { color: var(--accent); }
+.footer-made-by-icon { flex-shrink: 0; transition: transform .2s; }
+.footer-made-by:hover .footer-made-by-icon { transform: scale(1.15); }
 .footer-cvr {
   display: inline-block;
   margin-top: .75rem;
