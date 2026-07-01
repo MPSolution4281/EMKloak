@@ -23,29 +23,30 @@
   const hamburger  = document.getElementById('hamburger');
   const mobNav     = document.getElementById('mob-nav');
   const mobOverlay = document.getElementById('mob-overlay');
+  const mobClose   = document.getElementById('mob-close');
 
   if (hamburger && mobNav && mobOverlay) {
     const openMenu = () => {
-      hamburger.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       mobNav.classList.add('open');
       mobNav.setAttribute('aria-hidden', 'false');
       mobOverlay.classList.add('visible');
-      document.body.style.overflow = 'hidden';
     };
     const closeMenu = () => {
-      hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       mobNav.classList.remove('open');
       mobNav.setAttribute('aria-hidden', 'true');
       mobOverlay.classList.remove('visible');
-      document.body.style.overflow = '';
     };
+
     hamburger.addEventListener('click', () => {
       mobNav.classList.contains('open') ? closeMenu() : openMenu();
     });
+    if (mobClose) mobClose.addEventListener('click', closeMenu);
     mobOverlay.addEventListener('click', closeMenu);
+
     mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && mobNav.classList.contains('open')) closeMenu();
     });
@@ -108,7 +109,6 @@
       const orig = btn.textContent;
       btn.textContent = 'Sender…';
       btn.disabled = true;
-      /* Replace with real form submission endpoint */
       setTimeout(() => {
         btn.textContent = '✓ Besked sendt — vi kontakter dig inden for 24 timer';
         btn.style.background = 'var(--bg-3)';
